@@ -1,0 +1,3 @@
+h2o 3.10.5.2
+xgboost github 169c983b5f
+lighgbm github de341926c7

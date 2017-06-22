@@ -1,0 +1,27 @@
+
+#### h2o
+
+install.packages("h2o", type="source", repos="http://h2o-release.s3.amazonaws.com/h2o/rel-vajda/2/R")
+
+
+
+#### xgboost
+
+http://xgboost.readthedocs.io/en/latest/build.html#r-package-installation
+
+git clone --recursive https://github.com/dmlc/xgboost
+cd xgboost
+git submodule init
+git submodule update
+cd R-package
+sudo R CMD INSTALL .
+
+
+
+
+#### lightgbm
+
+devtools::install_github("Microsoft/LightGBM", subdir = "R-package")
+
+
+

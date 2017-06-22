@@ -1,0 +1,271 @@
+
+
+r3.8xlarge
+
+
+lscpu
+
+Architecture:          x86_64
+CPU op-mode(s):        32-bit, 64-bit
+Byte Order:            Little Endian
+CPU(s):                32
+On-line CPU(s) list:   0-31
+Thread(s) per core:    2
+Core(s) per socket:    8
+Socket(s):             2
+NUMA node(s):          2
+Vendor ID:             GenuineIntel
+CPU family:            6
+Model:                 62
+Stepping:              4
+CPU MHz:               2500.088
+BogoMIPS:              5064.66
+Hypervisor vendor:     Xen
+Virtualization type:   full
+L1d cache:             32K
+L1i cache:             32K
+L2 cache:              256K
+L3 cache:              25600K
+NUMA node0 CPU(s):     0-7,16-23
+NUMA node1 CPU(s):     8-15,24-31
+
+
+cat /proc/cpuinfo | grep "physical id" > cpuinfo1
+cat /proc/cpuinfo | grep "core id" > cpuinfo2
+paste cpuinfo[12] | nl -v 0
+
+     0  physical id     : 0     core id         : 0
+     1  physical id     : 0     core id         : 1
+     2  physical id     : 0     core id         : 2
+     3  physical id     : 0     core id         : 3
+     4  physical id     : 0     core id         : 4
+     5  physical id     : 0     core id         : 5
+     6  physical id     : 0     core id         : 6
+     7  physical id     : 0     core id         : 7
+     8  physical id     : 1     core id         : 0
+     9  physical id     : 1     core id         : 1
+    10  physical id     : 1     core id         : 2
+    11  physical id     : 1     core id         : 3
+    12  physical id     : 1     core id         : 4
+    13  physical id     : 1     core id         : 5
+    14  physical id     : 1     core id         : 6
+    15  physical id     : 1     core id         : 7
+    16  physical id     : 0     core id         : 0
+    17  physical id     : 0     core id         : 1
+    18  physical id     : 0     core id         : 2
+    19  physical id     : 0     core id         : 3
+    20  physical id     : 0     core id         : 4
+    21  physical id     : 0     core id         : 5
+    22  physical id     : 0     core id         : 6
+    23  physical id     : 0     core id         : 7
+    24  physical id     : 1     core id         : 0
+    25  physical id     : 1     core id         : 1
+    26  physical id     : 1     core id         : 2
+    27  physical id     : 1     core id         : 3
+    28  physical id     : 1     core id         : 4
+    29  physical id     : 1     core id         : 5
+    30  physical id     : 1     core id         : 6
+    31  physical id     : 1     core id         : 7
+
+
+-------------------------
+
+
+r4.8xlarge
+
+
+Architecture:          x86_64
+CPU op-mode(s):        32-bit, 64-bit
+Byte Order:            Little Endian
+CPU(s):                32
+On-line CPU(s) list:   0-31
+Thread(s) per core:    2
+Core(s) per socket:    16
+Socket(s):             1
+NUMA node(s):          1
+Vendor ID:             GenuineIntel
+CPU family:            6
+Model:                 79
+Stepping:              1
+CPU MHz:               1200.000
+BogoMIPS:              4600.15
+Hypervisor vendor:     Xen
+Virtualization type:   full
+L1d cache:             32K
+L1i cache:             32K
+L2 cache:              256K
+L3 cache:              46080K
+NUMA node0 CPU(s):     0-31
+
+
+
+-------------------------
+
+   
+x1.32xlarge
+
+
+lscpu
+
+Architecture:          x86_64
+CPU op-mode(s):        32-bit, 64-bit
+Byte Order:            Little Endian
+CPU(s):                128
+On-line CPU(s) list:   0-127
+Thread(s) per core:    2
+Core(s) per socket:    16
+Socket(s):             4
+NUMA node(s):          4
+Vendor ID:             GenuineIntel
+CPU family:            6
+Model:                 63
+Stepping:              4
+CPU MHz:               2300.044
+BogoMIPS:              4661.97
+Hypervisor vendor:     Xen
+Virtualization type:   full
+L1d cache:             32K
+L1i cache:             32K
+L2 cache:              256K
+L3 cache:              46080K
+NUMA node0 CPU(s):     0-15,64-79
+NUMA node1 CPU(s):     16-31,80-95
+NUMA node2 CPU(s):     32-47,96-111
+NUMA node3 CPU(s):     48-63,112-127
+
+
+cat /proc/cpuinfo | grep "physical id" > cpuinfo1
+cat /proc/cpuinfo | grep "core id" > cpuinfo2
+paste cpuinfo[12] | nl -v 0
+
+     0  physical id     : 0     core id         : 0
+     1  physical id     : 0     core id         : 1
+     2  physical id     : 0     core id         : 2
+     3  physical id     : 0     core id         : 3
+     4  physical id     : 0     core id         : 4
+     5  physical id     : 0     core id         : 5
+     6  physical id     : 0     core id         : 6
+     7  physical id     : 0     core id         : 7
+     8  physical id     : 0     core id         : 8
+     9  physical id     : 0     core id         : 9
+    10  physical id     : 0     core id         : 10
+    11  physical id     : 0     core id         : 11
+    12  physical id     : 0     core id         : 12
+    13  physical id     : 0     core id         : 13
+    14  physical id     : 0     core id         : 14
+    15  physical id     : 0     core id         : 15
+    16  physical id     : 1     core id         : 0
+    17  physical id     : 1     core id         : 1
+    18  physical id     : 1     core id         : 2
+    19  physical id     : 1     core id         : 3
+    20  physical id     : 1     core id         : 4
+    21  physical id     : 1     core id         : 5
+    22  physical id     : 1     core id         : 6
+    23  physical id     : 1     core id         : 7
+    24  physical id     : 1     core id         : 8
+    25  physical id     : 1     core id         : 9
+    26  physical id     : 1     core id         : 10
+    27  physical id     : 1     core id         : 11
+    28  physical id     : 1     core id         : 12
+    29  physical id     : 1     core id         : 13
+    30  physical id     : 1     core id         : 14
+    31  physical id     : 1     core id         : 15
+    32  physical id     : 2     core id         : 0
+    33  physical id     : 2     core id         : 1
+    34  physical id     : 2     core id         : 2
+    35  physical id     : 2     core id         : 3
+    36  physical id     : 2     core id         : 4
+    37  physical id     : 2     core id         : 5
+    38  physical id     : 2     core id         : 6
+    39  physical id     : 2     core id         : 7
+    40  physical id     : 2     core id         : 8
+    41  physical id     : 2     core id         : 9
+    42  physical id     : 2     core id         : 10
+    43  physical id     : 2     core id         : 11
+    44  physical id     : 2     core id         : 12
+    45  physical id     : 2     core id         : 13
+    46  physical id     : 2     core id         : 14
+    47  physical id     : 2     core id         : 15
+    48  physical id     : 3     core id         : 0
+    49  physical id     : 3     core id         : 1
+    50  physical id     : 3     core id         : 2
+    51  physical id     : 3     core id         : 3
+    52  physical id     : 3     core id         : 4
+    53  physical id     : 3     core id         : 5
+    54  physical id     : 3     core id         : 6
+    55  physical id     : 3     core id         : 7
+    56  physical id     : 3     core id         : 8
+    57  physical id     : 3     core id         : 9
+    58  physical id     : 3     core id         : 10
+    59  physical id     : 3     core id         : 11
+    60  physical id     : 3     core id         : 12
+    61  physical id     : 3     core id         : 13
+    62  physical id     : 3     core id         : 14
+    63  physical id     : 3     core id         : 15
+    64  physical id     : 0     core id         : 0
+    65  physical id     : 0     core id         : 1
+    66  physical id     : 0     core id         : 2
+    67  physical id     : 0     core id         : 3
+    68  physical id     : 0     core id         : 4
+    69  physical id     : 0     core id         : 5
+    70  physical id     : 0     core id         : 6
+    71  physical id     : 0     core id         : 7
+    72  physical id     : 0     core id         : 8
+    73  physical id     : 0     core id         : 9
+    74  physical id     : 0     core id         : 10
+    75  physical id     : 0     core id         : 11
+    76  physical id     : 0     core id         : 12
+    77  physical id     : 0     core id         : 13
+    78  physical id     : 0     core id         : 14
+    79  physical id     : 0     core id         : 15
+    80  physical id     : 1     core id         : 0
+    81  physical id     : 1     core id         : 1
+    82  physical id     : 1     core id         : 2
+    83  physical id     : 1     core id         : 3
+    84  physical id     : 1     core id         : 4
+    85  physical id     : 1     core id         : 5
+    86  physical id     : 1     core id         : 6
+    87  physical id     : 1     core id         : 7
+    88  physical id     : 1     core id         : 8
+    89  physical id     : 1     core id         : 9
+    90  physical id     : 1     core id         : 10
+    91  physical id     : 1     core id         : 11
+    92  physical id     : 1     core id         : 12
+    93  physical id     : 1     core id         : 13
+    94  physical id     : 1     core id         : 14
+    95  physical id     : 1     core id         : 15
+    96  physical id     : 2     core id         : 0
+    97  physical id     : 2     core id         : 1
+    98  physical id     : 2     core id         : 2
+    99  physical id     : 2     core id         : 3
+   100  physical id     : 2     core id         : 4
+   101  physical id     : 2     core id         : 5
+   102  physical id     : 2     core id         : 6
+   103  physical id     : 2     core id         : 7
+   104  physical id     : 2     core id         : 8
+   105  physical id     : 2     core id         : 9
+   106  physical id     : 2     core id         : 10
+   107  physical id     : 2     core id         : 11
+   108  physical id     : 2     core id         : 12
+   109  physical id     : 2     core id         : 13
+   110  physical id     : 2     core id         : 14
+   111  physical id     : 2     core id         : 15
+   112  physical id     : 3     core id         : 0
+   113  physical id     : 3     core id         : 1
+   114  physical id     : 3     core id         : 2
+   115  physical id     : 3     core id         : 3
+   116  physical id     : 3     core id         : 4
+   117  physical id     : 3     core id         : 5
+   118  physical id     : 3     core id         : 6
+   119  physical id     : 3     core id         : 7
+   120  physical id     : 3     core id         : 8
+   121  physical id     : 3     core id         : 9
+   122  physical id     : 3     core id         : 10
+   123  physical id     : 3     core id         : 11
+   124  physical id     : 3     core id         : 12
+   125  physical id     : 3     core id         : 13
+   126  physical id     : 3     core id         : 14
+   127  physical id     : 3     core id         : 15
+
+
+

@@ -2,7 +2,7 @@
 # GBM multicore scaling
 ## h2o, xgboost and lightgbm on multicore and multi-socket systems
 
-Despite the deep learning hype, on most supervised learning problems on tabular data 
+Despite the deep learning hype, on most supervised learning problems with tabular data 
 (commonly encountered in business) gradient boosting machines (GBMs) are often the
 winning (in accuracy) single-algorithm solution.
 

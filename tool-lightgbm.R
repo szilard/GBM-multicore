@@ -18,9 +18,9 @@ dlgb_train <- lgb.Dataset(data = X_train, label = ifelse(y_train=='Y',1,0))
 
 tm <- system.time({
 md <- lgb.train(data = dlgb_train, objective = "binary", 
-            nrounds = 3, num_leaves = 512, learning_rate = 0.1, categorical_feature = cols_cats)
+            nrounds = 10, num_leaves = 512, learning_rate = 0.1, categorical_feature = cols_cats)
 })
 tm
 
-cat(tm[[3]]/3,"\n")
+cat(tm[[3]]/10,"\n")
 

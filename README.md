@@ -23,13 +23,13 @@ Cores 0-7 are on CPU1, 8-15 on CPU2, then 16-23 are hyperthread pairs of 0-7 etc
 Relative training times:
 ![](fig-r3_8x-tools_relative.png)
 
-Contrary to the [previous results]((https://github.com/szilard/ml-x1)) 
+Contrary to the [previous results](https://github.com/szilard/ml-x1)
 (with previous versions of xgboost), having 2 CPU sockets
 causes little or no degradation of runtime for all 3 software tools, 
 see e.g. the `0-7` vs `0-3,8-11` results. 
 
 However, by adding hyperthreaded (HT) cores one gets only a partial speedup (vs adding "real" cores),
-see e.g. `0-3` to `0-3,16-19` (HT) vs `0-3` to `0-7` results.
+see e.g. `0-3` to `0-3,16-19` (HT) vs `0-3` to `0-7` results (with all tools).
 
 When all cores are uses adding the last HT cores can actually hurt performance (most significantly
 xgboost is faster on 15 cores than 32 cores).

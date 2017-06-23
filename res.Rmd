@@ -2,8 +2,9 @@
 
 library(tidyverse)
 
-d <- read_delim("res-r3_8x.csv", delim=":", 
-        col_names = c("instance","tool","ncores","cores","runtime")) 
+d <- read_delim("res.csv", delim=":", 
+        col_names = c("instance","tool","ncores","cores","runtime")) %>% 
+  filter(instance=="r4_8x")
 
 ```
 

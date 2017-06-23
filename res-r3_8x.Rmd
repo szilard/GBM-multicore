@@ -1,0 +1,29 @@
+```{r}
+
+library(tidyverse)
+
+d <- read_delim("res-r3_8x.csv", delim=":", 
+        col_names = c("instance","tool","ncores","cores","runtime")) 
+
+```
+
+```{r fig.height=8}
+
+cores_order <- d %>% arrange(ncores) %>% .$cores %>% unique
+
+d %>% mutate(cores=factor(cores, levels=cores_order)) %>% 
+  ggplot() + geom_boxplot(aes(x = cores, y = runtime, color = tool)) +
+  coord_flip() + facet_grid(tool~.) + ylim(c(0,NA))
+
+d %>% mutate(cores=factor(cores, levels=cores_order)) %>% 
+  ggplot() + geom_boxplot(aes(x = cores, y = runtime, color = tool)) +
+  coord_flip() + facet_grid(tool~., scales = "free") + ylim(c(0,NA))
+
+d %>% mutate(cores=factor(cores, levels=cores_order)) %>% 
+  filter(!grepl(",",cores)) %>% 
+  group_by(tool) %>% mutate(runtime_norm = runtime*ncores/min(runtime*ncores)) %>% 
+  ggplot() + geom_boxplot(aes(x = cores, y = runtime_norm, color = tool)) +
+  coord_flip() + facet_grid(tool~.) + ylim(c(0,NA))
+
+```
+

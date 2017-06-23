@@ -6,19 +6,27 @@ d <- read_delim("res.csv", delim=":",
         col_names = c("instance","tool","ncores","cores","runtime")) %>% 
   filter(instance=="r4_8x")
 
+cores_order <- d %>% arrange(ncores) %>% .$cores %>% unique
+
 ```
 
-```{r fig.height=8}
-
-cores_order <- d %>% arrange(ncores) %>% .$cores %>% unique
+```{r fig.height=6}
 
 d %>% mutate(cores=factor(cores, levels=cores_order)) %>% 
   ggplot() + geom_boxplot(aes(x = cores, y = runtime, color = tool)) +
   coord_flip() + facet_grid(tool~.) + ylim(c(0,NA))
 
+```
+
+```{r fig.height=6}
+
 d %>% mutate(cores=factor(cores, levels=cores_order)) %>% 
   ggplot() + geom_boxplot(aes(x = cores, y = runtime, color = tool)) +
   coord_flip() + facet_grid(tool~., scales = "free") + ylim(c(0,NA))
+
+```
+
+```{r fig.height=4}
 
 d %>% mutate(cores=factor(cores, levels=cores_order)) %>% 
   filter(!grepl(",",cores)) %>% 

@@ -49,8 +49,8 @@ In view of the above results on r3.8xlarge this is unexpected. Running on multip
 For more than 15 cores (the number of "real" cores on a socket), xgboost and lightgbm slows down, while h2o only gains
 a little bit of speed.
 
-On high number of cores (64/128) runtimes xgboost and lightgbm become very slow and runtimes show very high variability as
-well (no sure what's going on on those interconnects, maybe also effects of virtualization on AWS). 
-For example on 128 cores, lightgbm runtimes in 3 runs were 6.6, 2.2 and 7.2 seconds.
+On high number of cores (64/128) xgboost and lightgbm become very slow and runtimes show very high variability as
+well (not sure what's going on on those interconnects, maybe also effects of virtualization on AWS). 
+For example on 128 cores, lightgbm runtimes in 3 runs were 6.6, 2.2 and 7.2 seconds, respectively.
 
 

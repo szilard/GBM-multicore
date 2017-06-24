@@ -39,5 +39,8 @@ xgboost is faster on 15 cores than 32 cores).
 
 x1.32xlarge has 4 CPU sockets with 16+16 hyperthreaded cores each. Cores 0-15 are on CPU1, 16-31 on CPU2 etc., then 64-79 are hyperthread pairs of 0-15 etc.
 
+Relative training times:
+![](fig-x1_32x-tools_relative-lt64c.png)
+![](fig-x1_32x-tools_relative-ge32c.png)
 
 

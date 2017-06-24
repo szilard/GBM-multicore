@@ -4,7 +4,7 @@ library(tidyverse)
 
 d <- read_delim("res.csv", delim=":", 
         col_names = c("instance","tool","ncores","cores","runtime")) %>% 
-  filter(instance=="r4_8x")
+  filter(instance=="x1_32x", ncores<64)
 
 cores_order <- d %>% arrange(ncores) %>% .$cores %>% unique
 

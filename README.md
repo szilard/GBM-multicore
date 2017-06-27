@@ -54,3 +54,18 @@ well (not sure what's going on on those interconnects, maybe also effects of vir
 For example on 128 cores, lightgbm runtimes in 3 runs were 6.6, 2.2 and 7.2 seconds, respectively.
 
 
+### Other AWS instances
+
+Experiments with m4.16xlarge (64 cores, 2 sockets), c4.8xlarge (36 cores, 2 sockets), r4.16xlarge (64 cores, 2 sockets) and 
+x1.16xlarge (64 cores, 2 sockets) show results similar to x1.32xlarge that is lightgbm and xgboost slow down on more 
+than 1 socket. 
+
+The best performance for lightgbm and xgboost is if restricted to 1 socket and 16 "real" cores, no hyperthreading.
+
+In such regime, one can still take advantage of more cores on a system by placing for example different cross validation
+folds or different runs in a grid/random hyperparameter search on the different sockets.
+
+TODO: Do above on physical servers (to rule out virtualization effects, though it seems the root cause of the above
+behavior is cache invalidation and the interconnect).
+
+

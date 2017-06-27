@@ -61,8 +61,15 @@ x1.16xlarge (64 cores, 2 sockets) show results similar to x1.32xlarge that is li
 than 1 socket. 
 
 The best performance for lightgbm and xgboost is if restricted to 1 socket and 16 "real" cores, no hyperthreading.
+Fastest training for all 3 tools is on r4.8xlarge (32 cores, 1 socket) restricted to 16 "real" cores:
 
-In such regime, one can still take advantage of more cores on a system by placing for example different cross validation
+Tool      |   Time [s] 
+----------|-------------
+xgboost   |    4
+lightgbm  |    0.5
+h2o       |    10
+
+Nevertheless, one can still take advantage of more cores on a system by placing for example different cross validation
 folds or different runs in a grid/random hyperparameter search on the different sockets.
 
 TODO: Do above on physical servers (to rule out virtualization effects, though it seems the root cause of the above

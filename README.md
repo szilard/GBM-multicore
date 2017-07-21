@@ -101,4 +101,10 @@ effects (smaller datasets fit better/longer in CPU caches), and then better than
 ![](single_socket/fig-norm1-1.png)
 
 
+Raw training times:
+
+![](single_socket/fig-raw-1.png)
+
+
+
 

@@ -1,7 +1,7 @@
 
 # GBM multicore scaling
 
-# h2o, xgboost and lightgbm on multicore and multi-socket systems
+## h2o, xgboost and lightgbm on multicore and multi-socket systems
 
 Despite the deep learning hype, on most supervised learning problems with tabular data 
 (commonly encountered in business) gradient boosting machines (GBMs) are often the
@@ -18,7 +18,7 @@ of xgboost on multi-socket systems.
 
 ## Multi-socket systems
 
-Experiments are using a 10 million record dataset.
+These experiments are using a 10-million-record dataset.
 
 
 ### r3.8xlarge (32 cores)

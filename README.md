@@ -111,7 +111,7 @@ As a combination of the above 2 effects one can get this much faster training wi
 Tool      |   1M data   | 10M/100M  
 ----------|-------------|------------
 lightgbm  |    4x       |     6x
-xgboost   |    4x       |     6x
+xgboost   |    6x       |     4x
 h2o       |    6x       |     12x
 
 

@@ -85,26 +85,26 @@ behavior is cache invalidation and the interconnect).
 
 ## Single socket (multicore) scaling
 
-Normalized training time (`training_time * n_cores / dataset_size`)
-vs number of cores and dataset size on a single socket system (r4.8xlarge, 16 "real" cores) for
+We measure training time vs number of cores and dataset size on a single socket system (r4.8xlarge, 16 "real" cores) for
 1,2,4,8,16 cores and datasets of 1,10,100 million records.
 
-Linear scaling with number of cores (e.g. 2x faster on 2x number of cores) would be a horizontal line.
-Linear scaling with dataset size would mean overlapping points for each dataset size.
+Training time normalized with dataset size:
+
+![](single_socket/fig-norm1_size-1.png)
+
+Training time normalized with dataset size and number of cores:
+
+![](single_socket/fig-norm2_size_cores-1.png)
+
+Training time normalized with 1-core training time for given tool and dataset size:
+
+![](single_socket/fig-norm3_1core-1.png)
 
 The scaling as a function of number of cores is worse than linear (as expected). 
 
-However, one could expect better than linear scaling as a function of dataset size (if various overheads become
+However, one could expect linear or better than linear scaling as a function of dataset size (if various overheads become
 relatively smaller for larger dataset). Contrary, we see worse than linear scaling from 1M to 10M, I think due to CPU cache
 effects (smaller datasets fit better/longer in CPU caches), and then better than linear scaling from 10M to 100M. 
-
-![](single_socket/fig-norm1-1.png)
-
-
-Raw training times:
-
-![](single_socket/fig-raw-1.png)
-
 
 
 

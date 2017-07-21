@@ -78,7 +78,7 @@ behavior is cache invalidation and the interconnect).
 
 ### Single socket scaling
 
-![](single_socket/scaling.png){:height="50%" width="50%"}
+![]{width: 70%;}(single_socket/scaling.png)
 
 
 

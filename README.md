@@ -80,9 +80,17 @@ behavior is cache invalidation and the interconnect).
 ### Single socket scaling
 
 Normalized training time (`training_time * n_cores / dataset_size`)
-vs number of cores and dataset size on a single socket system (r4.8xlarge, 16 "real" cores).
+vs number of cores and dataset size on a single socket system (r4.8xlarge, 16 "real" cores) for
+1,2,4,8,16 cores and datasets of 1,10,100 million records.
 
+Linear scaling with number of cores (e.g. 2x faster on 2x number of cores) would be a horizontal line.
+Linear scaling with dataset size would mean same normalized dataset size for each size.
 
+Worse than linear scaling as a function of cores is as expected. 
+
+However, one could expect better than linear scaling as a function of dataset size (if various overheads become
+relatively smaller for larger dataset). Contrary, we see worse than linear scaling, I think due to CPU cache
+effects (smaller datasets fit better/longer in CPU caches). 
 
 ![](single_socket/scaling.png)
 

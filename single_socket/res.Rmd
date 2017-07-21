@@ -9,7 +9,7 @@ d <- read_delim("res.csv", delim=":",
 
 ```{r norm1_size, fig.height=10, fig.path="fig-"}
 
-ggplot(d) + geom_boxplot(aes(x = as.factor(ncores), y = runtime/size*20, color = as.factor(size)), 
+ggplot(d) + geom_boxplot(aes(x = as.factor(ncores), y = runtime/size, color = as.factor(size)), 
       position = position_dodge(0), width = 0.4) +
   facet_grid(tool~., scales="free") + ylim(c(0,NA)) 
 

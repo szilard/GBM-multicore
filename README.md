@@ -92,7 +92,7 @@ vs number of cores and dataset size on a single socket system (r4.8xlarge, 16 "r
 Linear scaling with number of cores (e.g. 2x faster on 2x number of cores) would be a horizontal line.
 Linear scaling with dataset size would mean overlapping points for each dataset size.
 
-Worse than linear scaling as a function of cores is as expected. 
+The scaling as a function of number of cores is worse than linear (as expected). 
 
 However, one could expect better than linear scaling as a function of dataset size (if various overheads become
 relatively smaller for larger dataset). Contrary, we see worse than linear scaling from 1M to 10M, I think due to CPU cache

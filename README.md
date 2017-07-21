@@ -72,7 +72,13 @@ h2o       |    10
 Nevertheless, one can still take advantage of more cores on a system by placing for example different cross validation
 folds or different runs in a grid/random hyperparameter search on the different sockets.
 
-TODO: Do above on physical servers (to rule out virtualization effects, though it seems the root cause of the above
+**TODO:** Do above on physical servers (to rule out virtualization effects, though it seems the root cause of the above
 behavior is cache invalidation and the interconnect).
+
+
+## Single socket scaling
+
+![](single_socket/scaling.png)
+
 
 

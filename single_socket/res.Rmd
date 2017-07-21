@@ -1,0 +1,17 @@
+```{r}
+
+library(tidyverse)
+
+d <- read_delim("res.csv", delim=":", 
+        col_names = c("size","tool","ncores","cores","runtime")) 
+
+```
+
+```{r fig.height=10, fig.path="figs"}
+
+ggplot(d) + geom_boxplot(aes(x = as.factor(ncores), y = runtime/size*ncores, color = as.factor(size)), 
+      position = position_dodge(0), width = 0.4) +
+  facet_grid(tool~., scales="free") + ylim(c(0,NA)) 
+
+```
+

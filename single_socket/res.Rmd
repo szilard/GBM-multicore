@@ -7,7 +7,7 @@ d <- read_delim("res.csv", delim=":",
 
 ```
 
-```{r fig.height=10, fig.path="figs"}
+```{r norm1, fig.height=10, fig.path="fig-"}
 
 ggplot(d) + geom_boxplot(aes(x = as.factor(ncores), y = runtime/size*ncores, color = as.factor(size)), 
       position = position_dodge(0), width = 0.4) +
@@ -15,3 +15,19 @@ ggplot(d) + geom_boxplot(aes(x = as.factor(ncores), y = runtime/size*ncores, col
 
 ```
 
+```{r raw, fig.height=10, fig.path="fig-"}
+
+ggplot(d) + geom_boxplot(aes(x = as.factor(ncores), y = runtime/size, color = as.factor(size)), 
+      position = position_dodge(0), width = 0.4) +
+  facet_grid(tool~., scales="free") + ylim(c(0,NA)) 
+
+```
+
+```{r norm2, fig.height=10, fig.path="fig-"}
+
+d %>% group_by(size, tool) %>% mutate(runtime_vs1core=runtime/first(runtime)) %>% 
+  ggplot() + geom_boxplot(aes(x = as.factor(ncores), y = 1/runtime_vs1core, color = as.factor(size)), 
+      position = position_dodge(0), width = 0.4) +
+  facet_grid(tool~., scales="free") + ylim(c(0,NA)) 
+
+```

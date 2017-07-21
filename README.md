@@ -98,7 +98,7 @@ However, one could expect better than linear scaling as a function of dataset si
 relatively smaller for larger dataset). Contrary, we see worse than linear scaling from 1M to 10M, I think due to CPU cache
 effects (smaller datasets fit better/longer in CPU caches), and then better than linear scaling from 10M to 100M. 
 
-![](single_socket/scaling.png)
+![](single_socket/fig-norm1-1.png)
 
 
 

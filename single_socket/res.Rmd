@@ -7,7 +7,7 @@ d <- read_delim("res.csv", delim=":",
 
 ```
 
-```{r fig.height=10, fig.path="figs"}
+```{r fig.height=6, fig.width=5, fig.path="figs"}
 
 ggplot(d) + geom_boxplot(aes(x = as.factor(ncores), y = runtime/size*ncores, color = as.factor(size)), 
       position = position_dodge(0), width = 0.4) +

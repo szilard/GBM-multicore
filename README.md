@@ -76,9 +76,9 @@ folds or different runs in a grid/random hyperparameter search on the different 
 behavior is cache invalidation and the interconnect).
 
 
-## Single socket scaling
+### Single socket scaling
 
-![](single_socket/scaling.png)
+![](single_socket/scaling.png | width=100)
 
 
 

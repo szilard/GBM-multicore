@@ -103,8 +103,15 @@ Training time normalized with 1-core training time for given tool and dataset si
 The scaling as a function of number of cores is worse than linear (as expected). 
 
 However, one could expect linear or better than linear scaling as a function of dataset size (if various overheads become
-relatively smaller for larger dataset). Contrary, we see worse than linear scaling from 1M to 10M, I think due to CPU cache
+relatively smaller for larger datasets). Contrary, we see worse than linear scaling from 1M to 10M, I think due to CPU cache
 effects (smaller datasets fit better/longer in CPU caches), and then linear (xgboost and lightgbm) or better than linear (h2o) scaling from 10M to 100M. 
 
+As a combination of the above 2 effects one can get this much faster training with 16 cores (vs 1):
+
+Tool      |   1M data   | 10M/100M  
+----------|-------------|------------
+lightgbm  |    4x       |     6x
+xgboost   |    4x       |     6x
+h2o       |    6x       |     12x
 
 

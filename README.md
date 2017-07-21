@@ -1,6 +1,7 @@
 
 # GBM multicore scaling
-## h2o, xgboost and lightgbm on multicore and multi-socket systems
+
+# h2o, xgboost and lightgbm on multicore and multi-socket systems
 
 Despite the deep learning hype, on most supervised learning problems with tabular data 
 (commonly encountered in business) gradient boosting machines (GBMs) are often the
@@ -13,6 +14,11 @@ In this repo I'll take a look at the scalability of h2o, xgboost and lightgbm as
 of the number of CPU cores and sockets on various Amazon EC2 instances. 
 Previous [experiments](https://github.com/szilard/ml-x1) have shown significant slow-down
 of xgboost on multi-socket systems.
+
+
+## Multi-socket systems
+
+Experiments are using a 10 million record dataset.
 
 
 ### r3.8xlarge (32 cores)
@@ -77,7 +83,7 @@ behavior is cache invalidation and the interconnect).
 
 
 
-### Single socket scaling
+## Single socket (multicore) scaling
 
 Normalized training time (`training_time * n_cores / dataset_size`)
 vs number of cores and dataset size on a single socket system (r4.8xlarge, 16 "real" cores) for
@@ -89,8 +95,8 @@ Linear scaling with dataset size would mean same normalized dataset size for eac
 Worse than linear scaling as a function of cores is as expected. 
 
 However, one could expect better than linear scaling as a function of dataset size (if various overheads become
-relatively smaller for larger dataset). Contrary, we see worse than linear scaling, I think due to CPU cache
-effects (smaller datasets fit better/longer in CPU caches). 
+relatively smaller for larger dataset). Contrary, we see worse than linear scaling from 1M to 10M, I think due to CPU cache
+effects (smaller datasets fit better/longer in CPU caches), and then better than linear scaling from 10M to 100M. 
 
 ![](single_socket/scaling.png)
 

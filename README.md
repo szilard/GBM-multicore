@@ -102,7 +102,7 @@ Training speed (`1/time`) normalized with 1-core training time for given tool an
 ![](single_socket/fig-norm3_1core-1.png)
 
 The scaling as a function of number of cores is worse than linear (as expected). 
-For example lightgbm on 10M record:
+For example lightgbm on 10M records:
 
 n_cores | speed
 --------|----------

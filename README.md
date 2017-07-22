@@ -102,6 +102,14 @@ Training speed (`1/time`) normalized with 1-core training time for given tool an
 ![](single_socket/fig-norm3_1core-1.png)
 
 The scaling as a function of number of cores is worse than linear (as expected). 
+For example lightgbm on 10M record:
+
+n_cores | speed
+--------|----------
+2       | 1.8x
+4       | 3x
+8       | 5x
+16      | 6x
 
 However, one could expect linear or better than linear scaling as a function of dataset size (if various overheads become
 relatively smaller for larger datasets). Contrary, we see worse than linear scaling from 1M to 10M, I think due to CPU cache

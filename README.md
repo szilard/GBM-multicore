@@ -86,7 +86,8 @@ behavior is cache invalidation and the interconnect).
 ## Single socket (multicore) scaling
 
 We measure training time vs number of cores and dataset size on a single socket system (r4.8xlarge, 16 "real" cores) for
-1,2,4,8,16 cores and datasets of 1,10,100 million records.
+1,2,4,8,16 cores and datasets of 1,10,100 million records. 
+Details [here](single_socket).
 
 Training time normalized with dataset size:
 
@@ -96,7 +97,7 @@ Training time normalized with dataset size and number of cores:
 
 ![](single_socket/fig-norm2_size_cores-1.png)
 
-Training time normalized with 1-core training time for given tool and dataset size:
+Training speed (`1/time`) normalized with 1-core training time for given tool and dataset size:
 
 ![](single_socket/fig-norm3_1core-1.png)
 

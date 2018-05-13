@@ -71,9 +71,9 @@ Fastest training for all 3 tools is on r4.8xlarge (32 cores, 1 socket) restricte
 
 Tool      |   Time [s] 
 ----------|-------------
-xgboost   |    4
-lightgbm  |    0.5
-h2o       |    10
+xgboost   |    260
+lightgbm  |    45
+h2o       |    100
 
 Nevertheless, one can still take advantage of more cores on a system by placing for example different cross validation
 folds or different runs in a grid/random hyperparameter search on the different sockets.

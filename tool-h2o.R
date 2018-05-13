@@ -7,7 +7,7 @@ p <- ncol(dx_train)-1
 tm <- system.time({
   md <- h2o.gbm(training_frame = dx_train, x = 1:p, y = p+1, 
                 max_depth = 10, learn_rate = 0.1, nbins = 100, 
-                ntrees = 1, seed = 123)
+                ntrees = 100, seed = 123)
 })
 tm
 
